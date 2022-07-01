@@ -1,0 +1,21 @@
+@use "./global" as *;
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+  .left {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  .right {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    li {
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+  }
+}
