@@ -1,11 +1,17 @@
+import { useContext } from "react";
 import Lnb from "../components/Lnb";
+import { bookmarkContext } from "../contexts/bookmarkContext";
 import styles from "../styles/Settings.module.scss";
 
 export default function Settings() {
+  const { dispatch } = useContext(bookmarkContext);
+
   const resetBookmark = () => {
+    dispatch({ type: "RESET_BOOKMARK" });
     alert("즐겨찾기가 초기화 되었습니다.");
   };
   const eraseBookmark = () => {
+    dispatch({ type: "CLEAR_BOOKMARK" });
     alert("즐겨찾기가 삭제 되었습니다.");
   };
 

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaBookmark, FaTimes } from "react-icons/fa";
 import Lnb from "../components/Lnb";
 import styles from "../styles/Search.module.scss";
 import { SearchbarProps } from "../types/type";
 import stationList from "../data/stationList.json";
 import { useNavigate } from "react-router-dom";
+import { bookmarkContext } from "../contexts/bookmarkContext";
 
 export default function Search() {
   const [search, setSearch] = useState("");
@@ -39,7 +40,7 @@ function Searchbar({ search, setSearch }: SearchbarProps) {
 }
 
 function ResultsInitial() {
-  const bookmark = ["서울시 종로구"];
+  const { bookmark } = useContext(bookmarkContext);
   return (
     <div className={styles.Results}>
       <div className={styles.header}>즐겨찾기</div>
@@ -79,12 +80,12 @@ type ResultProps = {
 
 function Result({ stateAndDistrict, text }: ResultProps) {
   const navigate = useNavigate();
-  const bookmark = ["서울시 종로구"];
+  const { bookmark, dispatch } = useContext(bookmarkContext);
   const click = (station: string) => {
     if (bookmark.includes(station)) {
-      alert("bookmark removed");
+      dispatch({ type: "REMOVE_BOOKMARK", payload: station });
     } else {
-      alert("bookmark added");
+      dispatch({ type: "ADD_BOOKMARK", payload: station });
     }
   };
   return (

@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
-import { childrenProps, createContextType } from "../types/type";
+import { childrenProps, createSidebarContextType } from "../types/type";
 
-export const sidebarContext = createContext({} as createContextType);
+export const sidebarContext = createContext({} as createSidebarContextType);
 
 export const SidebarContextProvider = ({ children }: childrenProps) => {
   const [isOpen, setIsOpen] = useState(false);

@@ -66,7 +66,7 @@ export type FaceIconProps = {
 };
 
 export type BookmarkProps = {
-  setStation: (item: string) => void;
+  setStation: (arg: string) => void;
 };
 
 export type LnbProps = {
@@ -83,12 +83,34 @@ export type childrenProps = {
   children: ReactNode;
 };
 
-export type createContextType = {
+export type createSidebarContextType = {
   isOpen: boolean;
   toggleSidebar: () => void;
 };
 
+export type createBookmarkContextType = {
+  bookmark: string[];
+  dispatch: (arg: bookmarkAction) => void;
+};
+
 export type SearchbarProps = {
   search: string;
-  setSearch: (item: string) => void;
+  setSearch: (arg: string) => void;
 };
+
+// reducer
+type updateAction = {
+  type: "ADD_BOOKMARK" | "REMOVE_BOOKMARK";
+  payload: string;
+};
+
+type setAction = {
+  type: "SET_BOOKMARK";
+  payload: string[];
+};
+
+type resetAction = {
+  type: "CLEAR_BOOKMARK" | "RESET_BOOKMARK";
+};
+
+export type bookmarkAction = updateAction | setAction | resetAction;
