@@ -5,13 +5,19 @@ import {
   FaHome,
   FaInfoCircle,
   FaMap,
+  FaNs8,
+  FaPage4,
   FaSearch,
   FaSun,
+  FaToggleOff,
+  FaToggleOn,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { lvContext } from "../contexts/lvContext";
 import { sidebarContext } from "../contexts/sidebarContext";
 import styles from "../styles/Sidebar.module.scss";
 import Modal from "./Modal";
+import SlideSwitch from "./SlideSwitch";
 
 export default function Sidebar() {
   const { isOpen, toggleSidebar } = useContext(sidebarContext);
@@ -44,7 +50,6 @@ function SidebarWithoutModal({ isOpen }: { isOpen: Boolean }) {
               <div className={styles.text}>홈으로</div>
             </Link>
           </li>
-
           <li>
             <Link to="/search">
               <FaSearch className={styles.icon} />
@@ -75,14 +80,30 @@ function SidebarWithoutModal({ isOpen }: { isOpen: Boolean }) {
               <div className={styles.text}>설정</div>
             </Link>
           </li>
-          <li>
-            <Link to="/404">
-              <FaCog className={styles.icon} />
-              <div className={styles.text}>404 NotFound</div>
-            </Link>
-          </li>
+          <LvSwitch />
         </ul>
       </div>
     </div>
+  );
+}
+
+function LvSwitch() {
+  const { isLv8, toggleLv8 } = useContext(lvContext);
+  return (
+    <li>
+      <div className={styles.slideDiv}>
+        {isLv8 ? (
+          <FaToggleOn className={styles.icon} />
+        ) : (
+          <FaToggleOff className={styles.icon} />
+        )}
+        <div className={styles.text}>
+          <span>기준 : {isLv8 ? "8단계(WHO)" : "4단계(AirKorea)"}</span>
+        </div>
+      </div>
+      <div className={styles.slide}>
+        <SlideSwitch isChecked={isLv8} toggle={toggleLv8} />
+      </div>
+    </li>
   );
 }

@@ -15,7 +15,7 @@ export default function MainCard({
     2: <MainCardText status="매우좋음" message="공기가 너무 좋아요!" />,
     3: <MainCardText status="좋음" message="쾌적한 날이에요~" />,
     4: <MainCardText status="보통" message="무난한 날이에요~" />,
-    5: <MainCardText status="별로" message="별로 좋지는 않네요" />,
+    5: <MainCardText status="별로" message="별로 좋지 않네요" />,
     6: <MainCardText status="나쁨" message="마스크 꼭 챙기세요~" />,
     7: <MainCardText status="매우나쁨" message="외출을 삼가세요!" />,
     8: <MainCardText status="최악" message="나가지 마세요~" />,

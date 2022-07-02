@@ -1,10 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Bookmark from "../components/Bookmark";
 import Info from "../components/Info";
 import MainCard from "../components/MainCard";
 import Navbar from "../components/Navbar";
 import Subs from "../components/SubCards";
+import { lvContext } from "../contexts/lvContext";
 import { sampleData } from "../data/data";
 import styles from "../styles/Home.module.scss";
 import { dataMiseAPI } from "../types/type";
@@ -13,7 +14,7 @@ export default function Home() {
   const [station, setStation] = useState("서울 종로구");
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<dataMiseAPI>(sampleData);
-  const isLv8 = true;
+  const { isLv8 } = useContext(lvContext);
   useEffect(() => {
     setIsLoading(true);
     axios

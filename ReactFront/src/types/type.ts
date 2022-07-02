@@ -83,6 +83,17 @@ export type childrenProps = {
   children: ReactNode;
 };
 
+export type SearchbarProps = {
+  search: string;
+  setSearch: (arg: string) => void;
+};
+
+export type SlideSwitchProps = {
+  isChecked: boolean;
+  toggle: () => void;
+};
+
+// context
 export type createSidebarContextType = {
   isOpen: boolean;
   toggleSidebar: () => void;
@@ -93,9 +104,9 @@ export type createBookmarkContextType = {
   dispatch: (arg: bookmarkAction) => void;
 };
 
-export type SearchbarProps = {
-  search: string;
-  setSearch: (arg: string) => void;
+export type createLvContextType = {
+  isLv8: boolean;
+  toggleLv8: () => void;
 };
 
 // reducer
