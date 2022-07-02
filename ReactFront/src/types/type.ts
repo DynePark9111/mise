@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 enum level {
   로딩 = 0,
   최고 = 1,
@@ -64,5 +66,62 @@ export type FaceIconProps = {
 };
 
 export type BookmarkProps = {
-  setStation: (item: string) => void;
+  setStation: (arg: string) => void;
 };
+
+export type LnbProps = {
+  current: string;
+};
+
+export type ModalProps = {
+  isOpen: boolean;
+  toggle: () => void;
+  children: ReactNode;
+};
+
+export type childrenProps = {
+  children: ReactNode;
+};
+
+export type SearchbarProps = {
+  search: string;
+  setSearch: (arg: string) => void;
+};
+
+export type SlideSwitchProps = {
+  isChecked: boolean;
+  toggle: () => void;
+};
+
+// context
+export type createSidebarContextType = {
+  isOpen: boolean;
+  toggleSidebar: () => void;
+};
+
+export type createBookmarkContextType = {
+  bookmark: string[];
+  dispatch: (arg: bookmarkAction) => void;
+};
+
+export type createLvContextType = {
+  isLv8: boolean;
+  toggleLv8: () => void;
+};
+
+// reducer
+type updateAction = {
+  type: "ADD_BOOKMARK" | "REMOVE_BOOKMARK";
+  payload: string;
+};
+
+type setAction = {
+  type: "SET_BOOKMARK";
+  payload: string[];
+};
+
+type resetAction = {
+  type: "CLEAR_BOOKMARK" | "RESET_BOOKMARK";
+};
+
+export type bookmarkAction = updateAction | setAction | resetAction;
