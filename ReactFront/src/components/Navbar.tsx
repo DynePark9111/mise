@@ -3,6 +3,7 @@ import { FaBars, FaCamera, FaMap, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { sidebarContext } from "../contexts/sidebarContext";
+import screenshot from "../utils/screenshot";
 
 export default function Navbar() {
   const { toggleSidebar } = useContext(sidebarContext);
@@ -13,7 +14,7 @@ export default function Navbar() {
         <FaBars />
       </div>
       <ul className={styles.right}>
-        <li title="스크린샷">
+        <li title="스크린샷" onClick={() => screenshot()}>
           <FaCamera />
         </li>
         <li>
