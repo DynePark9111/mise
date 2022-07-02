@@ -1,0 +1,52 @@
+@use "./global" as *;
+
+.MainCard {
+  padding: 1rem;
+  width: 100%;
+  color: $tx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .location {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .time {
+    font-size: 1.5rem;
+  }
+  .icon {
+    margin: 1rem;
+    width: 10rem;
+    height: 10rem;
+    font-size: 10rem;
+    animation: bounce 6s infinite;
+  }
+  .Text {
+    text-align: center;
+    .status {
+      font-size: 3rem;
+    }
+    .message {
+      font-size: 1.5rem;
+      word-break: keep-all;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  5%,
+  12.5%,
+  20%,
+  25%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-1rem);
+  }
+  15% {
+    transform: translateY(-0.5rem);
+  }
+}
