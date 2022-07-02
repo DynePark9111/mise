@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Bookmark from "../components/Bookmark";
+import Info from "../components/Info";
 import MainCard from "../components/MainCard";
 import Navbar from "../components/Navbar";
 import Subs from "../components/SubCards";
@@ -39,6 +40,7 @@ export default function Home() {
       />
       <Subs data={data} isLv8={isLv8} isLoading={isLoading} />
       <Bookmark setStation={setStation} />
+      <Info />
     </div>
   );
 }

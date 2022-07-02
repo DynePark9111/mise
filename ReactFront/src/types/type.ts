@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 enum level {
   로딩 = 0,
   최고 = 1,
@@ -65,4 +67,28 @@ export type FaceIconProps = {
 
 export type BookmarkProps = {
   setStation: (item: string) => void;
+};
+
+export type LnbProps = {
+  current: string;
+};
+
+export type ModalProps = {
+  isOpen: boolean;
+  toggle: () => void;
+  children: ReactNode;
+};
+
+export type childrenProps = {
+  children: ReactNode;
+};
+
+export type createContextType = {
+  isOpen: boolean;
+  toggleSidebar: () => void;
+};
+
+export type SearchbarProps = {
+  search: string;
+  setSearch: (item: string) => void;
 };
