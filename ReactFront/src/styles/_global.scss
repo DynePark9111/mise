@@ -34,7 +34,9 @@ $white: #ffffff;
 
 @mixin topLv {
   width: clamp($min_width, 100%, 100%);
+  padding: 0 0.5rem;
   min-height: 100vh;
+  height: 100%;
   background-color: var(--bg);
   word-break: keep-all;
 }
