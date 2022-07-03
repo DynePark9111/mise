@@ -1,8 +1,8 @@
 @use "./global" as *;
 
 .SlideSwitch {
-  --height: 34px;
-  --width: 60px;
+  --height: 20px;
+  --width: 40px;
   position: relative;
   display: inline-block;
   width: var(--width);
@@ -41,7 +41,7 @@
       width: calc(var(--height) - 8px);
       left: 4px;
       bottom: 4px;
-      background-color: $tx;
+      background-color: $white;
       -webkit-transition: 0.4s;
       transition: 0.4s;
       border-radius: 50%;

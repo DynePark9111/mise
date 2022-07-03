@@ -8,16 +8,16 @@
     flex-direction: column;
     align-items: center;
     .icon {
-      color: red;
+      color: $lightblue;
       font-size: 5rem;
     }
     button {
       font-size: 1rem;
       padding: 1rem 3rem;
-      background-color: red;
-      border: none;
+      background-color: var(--bg);
+      border: 1px solid $lightblue;
       border-radius: 4px;
-      color: $tx;
+      color: $lightblue;
       font-weight: bold;
       cursor: pointer;
     }

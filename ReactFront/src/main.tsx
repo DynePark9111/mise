@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BookmarkContextProvider } from "./contexts/bookmarkContext";
+import { DarkmodeContextProvider } from "./contexts/darkmodeContext";
 import { LvContextProvider } from "./contexts/lvContext";
 import { SidebarContextProvider } from "./contexts/sidebarContext";
 import "./styles/index.scss";
@@ -11,7 +12,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <SidebarContextProvider>
       <BookmarkContextProvider>
         <LvContextProvider>
-          <App />
+          <DarkmodeContextProvider>
+            <App />
+          </DarkmodeContextProvider>
         </LvContextProvider>
       </BookmarkContextProvider>
     </SidebarContextProvider>
