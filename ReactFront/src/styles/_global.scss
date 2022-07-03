@@ -1,5 +1,6 @@
 $min_width: 320px;
-$max_width: 1000px;
+$max_width: 900px;
+$ms_tablet: 768px;
 
 $lv_0: #777777;
 $lv_1: #1976d3;
@@ -34,7 +35,6 @@ $white: #ffffff;
 
 @mixin topLv {
   width: clamp($min_width, 100%, 100%);
-  padding: 0 0.5rem;
   min-height: 100vh;
   height: 100%;
   background-color: var(--bg);

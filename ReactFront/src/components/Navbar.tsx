@@ -10,24 +10,30 @@ export default function Navbar() {
 
   return (
     <div className={styles.Navbar}>
-      <div className={styles.left} title="메뉴" onClick={() => toggleSidebar()}>
-        <FaBars />
+      <div className={styles.wrapper}>
+        <div
+          className={styles.left}
+          title="메뉴"
+          onClick={() => toggleSidebar()}
+        >
+          <FaBars />
+        </div>
+        <ul className={styles.right}>
+          <li title="스크린샷" onClick={() => screenshot()}>
+            <FaCamera />
+          </li>
+          <li>
+            <Link to="/map" title="지도">
+              <FaMap />
+            </Link>
+          </li>
+          <li>
+            <Link to="/search" title="검색">
+              <FaSearch />
+            </Link>
+          </li>
+        </ul>
       </div>
-      <ul className={styles.right}>
-        <li title="스크린샷" onClick={() => screenshot()}>
-          <FaCamera />
-        </li>
-        <li>
-          <Link to="/map" title="지도">
-            <FaMap />
-          </Link>
-        </li>
-        <li>
-          <Link to="/search" title="검색">
-            <FaSearch />
-          </Link>
-        </li>
-      </ul>
     </div>
   );
 }
