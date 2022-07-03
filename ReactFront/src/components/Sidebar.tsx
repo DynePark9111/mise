@@ -5,6 +5,7 @@ import {
   FaHome,
   FaInfoCircle,
   FaMap,
+  FaMoon,
   FaNs8,
   FaPage4,
   FaSearch,
@@ -13,6 +14,7 @@ import {
   FaToggleOn,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { darkmodeContext } from "../contexts/darkmodeContext";
 import { lvContext } from "../contexts/lvContext";
 import { sidebarContext } from "../contexts/sidebarContext";
 import styles from "../styles/Sidebar.module.scss";
@@ -81,6 +83,7 @@ function SidebarWithoutModal({ isOpen }: { isOpen: Boolean }) {
             </Link>
           </li>
           <LvSwitch />
+          <DarkSwitch />
         </ul>
       </div>
     </div>
@@ -103,6 +106,27 @@ function LvSwitch() {
       </div>
       <div className={styles.slide}>
         <SlideSwitch isChecked={isLv8} toggle={toggleLv8} />
+      </div>
+    </li>
+  );
+}
+
+function DarkSwitch() {
+  const { isDark, toggleDarkmode } = useContext(darkmodeContext);
+  return (
+    <li>
+      <div className={styles.slideDiv}>
+        {isDark ? (
+          <FaMoon className={styles.icon} />
+        ) : (
+          <FaSun className={styles.icon} />
+        )}
+        <div className={styles.text}>
+          <span>다크모드</span>
+        </div>
+      </div>
+      <div className={styles.slide}>
+        <SlideSwitch isChecked={isDark} toggle={toggleDarkmode} />
       </div>
     </li>
   );

@@ -4,10 +4,12 @@
   @include topLv;
   .wrapper {
     @include wrapper;
+    margin: 3rem auto 0;
+    padding: 0 0.5rem 3rem;
     h2 {
       margin: 0;
       padding-bottom: 2rem;
-      border-bottom: 1px solid $tx;
+      border-bottom: 1px solid var(--tx);
     }
     h3,
     h4 {
@@ -26,10 +28,10 @@
       }
       tr {
         width: 100%;
-        border-bottom: 2px solid $tx;
-        color: $tx;
+        border-bottom: 2px solid $white;
+        color: $white;
         &:first-child {
-          border-top: 2px solid $tx;
+          border-top: 2px solid $white;
         }
         td:nth-child(1) {
           background-color: $purple;
@@ -78,10 +80,10 @@
         font-size: 2rem;
       }
       tr {
-        border-bottom: 2px solid $tx;
-        color: $tx;
+        border-bottom: 2px solid $white;
+        color: $white;
         &:first-child {
-          border-top: 2px solid $tx;
+          border-top: 2px solid $white;
         }
         td:nth-child(1) {
           background-color: $purple;

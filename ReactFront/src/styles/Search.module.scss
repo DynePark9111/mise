@@ -1,6 +1,7 @@
 @use "./global" as *;
 
 .Search {
+  --bd_grey: #f5f5f7;
   @include topLv;
   .Searchbar {
     margin-top: 1rem;
@@ -11,15 +12,14 @@
       justify-content: space-between;
       align-items: center;
       margin: auto;
-      background-color: $tx;
+      background-color: $white;
       border-radius: 4px;
       .xIcon {
-        font-size: 1.5rem;
-        padding: 0.5rem 1rem;
         cursor: pointer;
         color: grey;
       }
       #erase {
+        cursor: pointer;
         color: black;
       }
       input {
@@ -43,15 +43,15 @@
     overflow-y: auto;
     max-width: $max_width;
     margin: 1rem auto;
-    background-color: $tx;
+    background-color: $white;
     border-radius: 4px;
-    :last-child {
+    > :last-child {
       border: none;
       border-radius: 0 0 4px 4px;
     }
     .header {
       padding: 0.5rem 1rem;
-      border-bottom: 1px solid grey;
+      border-bottom: 1px solid var(--bd_grey);
     }
     .Result {
       display: flex;
@@ -59,11 +59,11 @@
       align-items: center;
       gap: 6px;
       padding: 0.5rem 1rem;
-      border-bottom: 1px solid grey;
+      border-bottom: 1px solid var(--bd_grey);
       cursor: pointer;
       &:hover {
         color: $lightblue;
-        background-color: grey;
+        background-color: var(--bd_grey);
       }
       .text {
         word-break: keep-all;

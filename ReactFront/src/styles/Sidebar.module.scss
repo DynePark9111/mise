@@ -7,14 +7,14 @@
   transition: transform 300ms;
   width: clamp(240px, 50%, 400px);
   height: 100%;
-  background-color: $bg;
+  background-color: var(--bg);
   .top {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: $logo;
-    color: $bg;
+    color: $white;
     .logo {
       margin-top: 2rem;
       font-size: 5rem;
@@ -33,23 +33,23 @@
   .nav {
     margin: 0;
     padding: 0;
-    background-color: $bg;
+    background-color: var(--bg);
     li a {
       flex: 1;
       display: flex;
       align-items: center;
       cursor: pointer;
       .icon {
-        color: $tx;
+        color: var(--tx);
         width: 1rem;
         height: 1rem;
         margin: 0.5rem;
       }
       .text {
-        color: $tx;
+        color: var(--tx);
       }
       &:hover {
-        background-color: $bg_hover;
+        background-color: var(--bg_hover);
       }
     }
     //switch
@@ -61,13 +61,13 @@
         display: flex;
         align-items: center;
         .icon {
-          color: $tx;
+          color: var(--tx);
           width: 1rem;
           height: 1rem;
           margin: 0.5rem;
         }
         .text {
-          color: $tx;
+          color: var(--tx);
         }
       }
       .slide {
