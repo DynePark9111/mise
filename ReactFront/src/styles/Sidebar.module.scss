@@ -6,8 +6,14 @@
   transform: translateX(-100%);
   transition: transform 300ms;
   width: clamp(240px, 50%, 400px);
-  height: 100%;
   background-color: var(--bg);
+  height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .top {
     display: flex;
     flex-direction: column;
@@ -41,9 +47,9 @@
       cursor: pointer;
       .icon {
         color: var(--tx);
-        width: 1rem;
-        height: 1rem;
-        margin: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0.5rem 1rem;
       }
       .text {
         color: var(--tx);
@@ -62,9 +68,9 @@
         align-items: center;
         .icon {
           color: var(--tx);
-          width: 1rem;
-          height: 1rem;
-          margin: 0.5rem;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin: 0.5rem 1rem;
         }
         .text {
           color: var(--tx);
@@ -84,5 +90,19 @@
 @keyframes spin {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: $ms_tablet) {
+  .Sidebar {
+    font-size: 12px;
+    .nav li {
+      a .icon,
+      .slideDiv .icon {
+        width: 1rem;
+        height: 1rem;
+        margin: 0.5rem 0.5rem;
+      }
+    }
   }
 }

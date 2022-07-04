@@ -2,21 +2,26 @@
 
 .Lnb {
   width: 100%;
+  background-color: $bg;
   font-size: 1.5rem;
   position: sticky;
   top: 0;
   z-index: 10;
   height: 3rem;
-  background-color: $bg;
   color: $white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  .icon {
-    cursor: pointer;
-  }
-  .current {
-    font-size: 1rem;
-    font-weight: bold;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $max_width;
+    margin: auto;
+    .icon {
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    .current {
+      font-size: 1rem;
+      font-weight: bold;
+    }
   }
 }

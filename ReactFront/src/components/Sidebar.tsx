@@ -6,8 +6,6 @@ import {
   FaInfoCircle,
   FaMap,
   FaMoon,
-  FaNs8,
-  FaPage4,
   FaSearch,
   FaSun,
   FaToggleOff,
