@@ -7,11 +7,11 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: $tx;
+    color: var(--tx);
     h2 {
       margin: 3rem 0 1rem;
       padding-bottom: 2rem;
-      border-bottom: 1px solid $tx;
+      border-bottom: 1px solid var(--tx);
     }
     section {
       display: flex;

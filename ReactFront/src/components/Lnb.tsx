@@ -11,16 +11,18 @@ export default function Lnb({ current }: LnbProps) {
 
   return (
     <div className={styles.Lnb}>
-      <div className={styles.icon} onClick={() => toggleSidebar()}>
-        <FaBars />
-      </div>
-      <div className={styles.current}>{current}</div>
-      <div
-        title="돌아가기"
-        className={styles.icon}
-        onClick={() => navigate(-1)}
-      >
-        <FaArrowLeft />
+      <div className={styles.wrapper}>
+        <div className={styles.icon} onClick={() => toggleSidebar()}>
+          <FaBars />
+        </div>
+        <div className={styles.current}>{current}</div>
+        <div
+          title="돌아가기"
+          className={styles.icon}
+          onClick={() => navigate(-1)}
+        >
+          <FaArrowLeft />
+        </div>
       </div>
     </div>
   );
