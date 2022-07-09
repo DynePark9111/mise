@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
+import { darkmodeContext } from "./contexts/darkmodeContext";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Map from "./pages/Map";
@@ -9,8 +11,9 @@ import Search from "./pages/Search";
 import Settings from "./pages/Settings";
 
 function App() {
+  const { isDark } = useContext(darkmodeContext);
   return (
-    <div className="App">
+    <div className="App" data-theme={isDark ? "dark" : "light"}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

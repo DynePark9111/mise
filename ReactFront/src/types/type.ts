@@ -109,6 +109,11 @@ export type createLvContextType = {
   toggleLv8: () => void;
 };
 
+export type darkmodevContextType = {
+  isDark: boolean;
+  toggleDarkmode: () => void;
+};
+
 // reducer
 type updateAction = {
   type: "ADD_BOOKMARK" | "REMOVE_BOOKMARK";

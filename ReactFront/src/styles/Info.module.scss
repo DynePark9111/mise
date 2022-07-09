@@ -1,6 +1,7 @@
 @use "./global" as *;
 
 .Info {
-  color: $tx;
+  color: $white;
   text-align: center;
+  padding: 0.5rem;
 }
