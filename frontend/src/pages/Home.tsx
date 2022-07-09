@@ -15,10 +15,12 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<dataMiseAPI>(sampleData);
   const { isLv8 } = useContext(lvContext);
+  const URL = process.env.REACT_APP_URL;
+
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get(`http://localhost:3001/mise/${station}`)
+      .get(`${URL}/mise/${station}`)
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -28,7 +30,7 @@ export default function Home() {
         console.log(err);
         setIsLoading(false);
       });
-  }, [station]);
+  }, [station, URL]);
 
   return (
     <div className={styles.Home} id={`bg${isLv8 ? data.maxLv8 : data.maxLv4}`}>
