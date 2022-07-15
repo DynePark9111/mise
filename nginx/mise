@@ -1,17 +1,17 @@
 server {
- listen 80;
- server_name mise.dynedyne.com dynedyne.com;
+  listen 80;
+  server_name mise.dynedyne.com dynedyne.com;
 
-location / {
- root /var/www/mise/frontend;
- index  index.html;
- proxy_http_version 1.1;
- proxy_set_header Upgrade $http_upgrade;
- proxy_set_header Connection 'upgrade';
- proxy_set_header Host $host;
- proxy_cache_bypass $http_upgrade;
- try_files $uri $uri/ /index.html;
-}
+  location / {
+    root /var/www/mise/frontend;
+    index index.html;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+    try_files $uri $uri/ /index.html;
+  }
 }
 
 server {
