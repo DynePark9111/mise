@@ -6,7 +6,7 @@ const cache = require("./src/middlewares/routeCache");
 
 require("dotenv").config();
 const PORT = process.env.PORT || 3001;
-const ORIGIN = process.env.ORIGIN;
+const ORIGIN = process.env.ORIGIN || "http://localhost:3000";
 
 app.use(cors({ origin: ORIGIN, credentials: true }));
 
@@ -18,5 +18,5 @@ const secondsCached = 10 * 60;
 app.use("/mise", cache(secondsCached), miseRoutes);
 
 app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
+  console.log(`Mise Server listening on port ${PORT}`);
 });

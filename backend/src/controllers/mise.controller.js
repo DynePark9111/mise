@@ -5,7 +5,7 @@ const { convertData } = require("../functions/convert");
 
 const getTest = async (req, res) => {
   try {
-    res.status(200).json({ message: "mise test" });
+    res.status(200).json({ message: "mise route testing" });
   } catch (error) {
     res.status(409).json({ message: "Error: mise.controller getTest" });
   }
