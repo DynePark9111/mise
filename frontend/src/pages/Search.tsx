@@ -4,7 +4,6 @@ import Lnb from "../components/Lnb";
 import styles from "../styles/Search.module.scss";
 import { SearchbarProps } from "../types/type";
 import stationList from "../data/stationList.json";
-import { useNavigate } from "react-router-dom";
 import { bookmarkContext } from "../contexts/bookmarkContext";
 
 export default function Search() {
@@ -79,7 +78,6 @@ type ResultProps = {
 };
 
 function Result({ stateAndDistrict, text }: ResultProps) {
-  const navigate = useNavigate();
   const { bookmark, dispatch } = useContext(bookmarkContext);
   const click = (station: string) => {
     if (bookmark.includes(station)) {
@@ -92,7 +90,7 @@ function Result({ stateAndDistrict, text }: ResultProps) {
     <div
       className={styles.Result}
       title={`${stateAndDistrict} 검색`}
-      onClick={() => navigate(`/station/${stateAndDistrict}`)}
+      onClick={() => click(stateAndDistrict)}
     >
       <div className={styles.text}>{text}</div>
       <FaBookmark

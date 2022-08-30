@@ -41,7 +41,7 @@ function SidebarWithoutModal({ isOpen }: { isOpen: Boolean }) {
         <div className={styles.top}>
           <FaSun className={styles.logo} />
           <div className={styles.name}>미세다</div>
-          <div className={styles.version}>Version 0.1.0</div>
+          <div className={styles.version}>Version 1.0.0</div>
         </div>
         <ul className={styles.nav}>
           <li>
